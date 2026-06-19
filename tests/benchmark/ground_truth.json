@@ -1,0 +1,11 @@
+{
+  "_instructions": "Add entries here after collecting ground-truth images. Source options: self_reported, dermatologist, fitzpatrick_crossref",
+  "_format": {
+    "filename": {
+      "monk": "integer 1-10",
+      "undertone": "Warm | Cool | Neutral",
+      "source": "self_reported | dermatologist | fitzpatrick_crossref",
+      "notes": "optional"
+    }
+  }
+}
