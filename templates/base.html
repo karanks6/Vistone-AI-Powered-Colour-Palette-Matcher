@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Vistone — Discover the colors that love you back.{% endblock %}</title>
+
+  <!-- Fonts + Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --brand-1:#a78bfa; /* light purple */
+      --brand-2:#f0abfc; /* pink/lilac */
+      --brand-3:#c4b5fd; /* soft violet */
+    }
+    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .editorial{ font-family: "Playfair Display", serif; }
+    /* gradient background: lilac -> blush -> soft sky */
+    .v-bg{
+      background-image: linear-gradient(135deg, #efe1ff 0%, #f6d9ff 40%, #e9f1ff 100%);
+    }
+    /* glass effect */
+    .glass{
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 18px 40px rgba(45, 20, 80, 0.10);
+    }
+    /* subtle section fade-in */
+    .fade-in{ animation: fade 500ms ease-out both; }
+    @keyframes fade { from {opacity:0; transform: translateY(6px);} to {opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+
+<body class="v-bg min-h-screen text-neutral-900">
+  <header class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+    <a href="{{ url_for('index') }}" class="editorial text-2xl tracking-tight">Vistone</a>
+    <nav class="text-sm">
+      <a class="px-3 py-2 rounded-md hover:bg-white/40 transition" href="{{ url_for('index') }}">Home</a>
+      <a class="px-3 py-2 rounded-md hover:bg-white/40 transition" href="#">About</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="mb-4">
+          {% for m in messages %}
+            <div class="glass rounded-md px-4 py-2 text-sm text-rose-700">{{ m }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 py-8 text-sm text-neutral-600">
+    © {{ 2025 }} Vistone — Find your true colors.
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

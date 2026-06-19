@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Your palette — Vistone{% endblock %}
+{% block content %}
+<section class="py-4 md:py-4 fade-in">
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Left: Photo + Detected info -->
+    <aside class="md:col-span-1 space-y-4">
+      <div class="glass rounded-md p-3">
+        <img src="{{ image_url }}" alt="Your photo" class="w-full rounded-md object-cover">
+      </div>
+      <div class="glass rounded-md p-4">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-md text-white text-xs bg-gradient-to-r from-[var(--brand-1)] via-[var(--brand-2)] to-[var(--brand-3)]">
+            Monk {{ tone }}
+          </span>
+          <span class="px-3 py-1 rounded-md bg-white/70 text-neutral-900 text-xs flex items-center gap-1">
+            {% if undertone == 'Warm' %}🔥{% elif undertone=='Cool' %}❄️{% else %}🌿{% endif %}
+            {{ undertone }}
+          </span>
+        </div>
+        <p class="mt-3 text-sm text-neutral-700">
+          Based on facial skin sampling and undertone analysis.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Right: Swatches -->
+    <section class="md:col-span-2">
+      <h2 class="editorial text-3xl tracking-tight">Your best colors</h2>
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {% for c in best_colors %}
+        <div class="relative aspect-square rounded-md overflow-hidden border border-white/40 glass
+                    transition transform hover:scale-[1.04] hover:shadow-2xl">
+          <div class="absolute inset-0"style="background: {{ c.hex }};"></div>
+
+          <div class="absolute top-2 right-2 text-xs px-2 py-1 rounded-md bg-white/85">Best ✅</div>
+
+          <!-- info panel on hover -->
+          <div class="absolute inset-x-2 bottom-2 rounded-md bg-white/80 backdrop-blur p-2">
+            <div class="font-semibold text-sm">{{ c.name }}</div>
+            <div class="text-[11px] text-neutral-700">{{ c.hex }}</div>
+            <div class="text-[11px] mt-1 text-neutral-700">
+              Great match for {{ undertone|lower }} undertones.
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% if best_colors|length == 0 %}
+        <p class="text-sm text-neutral-700">No best colors found for this tone/undertone.</p>
+        {% endif %}
+      </div>
+
+      <h2 class="editorial text-3xl mt-10 tracking-tight">Colors to avoid</h2>
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {% for c in avoid_colors %}
+        <div class="relative aspect-square rounded-md overflow-hidden border border-white/40 glass
+                    transition transform hover:scale-[1.04] hover:shadow-2xl">
+          <div class="absolute inset-0"style="background: {{ c.hex }};"></div>
+
+          <div class="absolute top-2 right-2 text-xs px-2 py-1 rounded-md bg-white/85">Avoid ❌</div>
+
+          <div class="absolute inset-x-2 bottom-2 rounded-md bg-white/80 backdrop-blur p-2">
+            <div class="font-semibold text-sm">{{ c.name }}</div>
+            <div class="text-[11px] text-neutral-700">{{ c.hex }}</div>
+            <div class="text-[11px] mt-1 text-neutral-700">
+              May clash with {{ undertone|lower }} undertones.
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% if avoid_colors|length == 0 %}
+        <p class="text-sm text-neutral-700">No avoid colors listed for this tone/undertone.</p>
+        {% endif %}
+      </div>
+
+      <div class="mt-8">
+        <a href="{{ url_for('index') }}" class="px-5 py-3 rounded-md glass hover:bg-white/60 transition">Try another photo</a>
+      </div>
+    </section>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor / IDE configurations
+.vscode/
+.idea/
+*.swp
+
+# Distribution / packaging
+*.whl
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.flaskenv
+
+# Images (as explicitly requested)
+images/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.webp
+
+# Large model weights (optional but recommended not to push large binary files)
+*.caffemodel
+*.pb
+*.h5
+*.pt
+*.pth
+*.onnx

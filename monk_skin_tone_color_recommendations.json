@@ -1,0 +1,922 @@
+{
+  "tone_1": {
+    "cool": {
+      "best": [
+        {
+          "name": "Deep Charcoal Blue",
+          "hex": "#1C2A39"
+        },
+        {
+          "name": "Soft Berry Pink",
+          "hex": "#C25B7C"
+        },
+        {
+          "name": "Cool Emerald",
+          "hex": "#006F52"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pale Peach",
+          "hex": "#F7CBB2"
+        },
+        {
+          "name": "Neon Lime",
+          "hex": "#C7F707"
+        },
+        {
+          "name": "Ivory Beige",
+          "hex": "#E9E3D0"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Muted Teal",
+          "hex": "#317873"
+        },
+        {
+          "name": "Soft Coral Rose",
+          "hex": "#E07A7A"
+        },
+        {
+          "name": "Earthy Olive Green",
+          "hex": "#708238"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Lemon Yellow",
+          "hex": "#F7F44A"
+        },
+        {
+          "name": "Bright Tomato Red",
+          "hex": "#D43121"
+        },
+        {
+          "name": "Cool Light Gray",
+          "hex": "#D5D8DC"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Dusty Lavender",
+          "hex": "#A998AE"
+        },
+        {
+          "name": "Slate Blue",
+          "hex": "#516B84"
+        },
+        {
+          "name": "Peony Pink",
+          "hex": "#D979A5"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pastel Mint",
+          "hex": "#C8F7DC"
+        },
+        {
+          "name": "Beige Tan",
+          "hex": "#D7CBB6"
+        },
+        {
+          "name": "Neon Orange",
+          "hex": "#FF6A00"
+        }
+      ]
+    }
+  },
+  "tone_2": {
+    "cool": {
+      "best": [
+        {
+          "name": "Midnight Navy",
+          "hex": "#0A1A37"
+        },
+        {
+          "name": "Mauve Rose",
+          "hex": "#B17894"
+        },
+        {
+          "name": "Deep Forest Green",
+          "hex": "#0E4D34"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Warm Mustard Yellow",
+          "hex": "#D6A700"
+        },
+        {
+          "name": "Electric Orange",
+          "hex": "#FF6600"
+        },
+        {
+          "name": "Pale Sand Beige",
+          "hex": "#E4D7C6"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Terracotta Clay",
+          "hex": "#C76A50"
+        },
+        {
+          "name": "Warm Moss Green",
+          "hex": "#6B7C43"
+        },
+        {
+          "name": "Muted Cranberry",
+          "hex": "#8E2C3A"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Ice Blue",
+          "hex": "#CFE9F8"
+        },
+        {
+          "name": "Neon Pink",
+          "hex": "#FF0F87"
+        },
+        {
+          "name": "Pastel Lavender",
+          "hex": "#E3D7F7"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Dusty Periwinkle",
+          "hex": "#8C90C6"
+        },
+        {
+          "name": "Soft Steel Blue",
+          "hex": "#587794"
+        },
+        {
+          "name": "Blush Pink",
+          "hex": "#E3A6B5"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Cold Ash Gray",
+          "hex": "#CBD0D3"
+        },
+        {
+          "name": "Beige Peach",
+          "hex": "#EED8C2"
+        },
+        {
+          "name": "Lime Green",
+          "hex": "#B8FF00"
+        }
+      ]
+    }
+  },
+  "tone_3": {
+    "cool": {
+      "best": [
+        {
+          "name": "Slate Navy",
+          "hex": "#253A55"
+        },
+        {
+          "name": "Dusty Rose",
+          "hex": "#C48A9A"
+        },
+        {
+          "name": "Pine Green",
+          "hex": "#0E5A46"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Golden Yellow",
+          "hex": "#F2C200"
+        },
+        {
+          "name": "Neon Coral",
+          "hex": "#FF5A4D"
+        },
+        {
+          "name": "Pale Warm Beige",
+          "hex": "#EEDAC8"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Muted Terracotta",
+          "hex": "#B9654A"
+        },
+        {
+          "name": "Golden Olive",
+          "hex": "#7C8034"
+        },
+        {
+          "name": "Brick Red",
+          "hex": "#8F2E2C"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Icy Mint",
+          "hex": "#C9FCEE"
+        },
+        {
+          "name": "Bright Magenta",
+          "hex": "#FF0D91"
+        },
+        {
+          "name": "Powder Blue",
+          "hex": "#C5D9F1"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Smoky Lavender",
+          "hex": "#9A8FAF"
+        },
+        {
+          "name": "Storm Blue",
+          "hex": "#486A8C"
+        },
+        {
+          "name": "Neutral Rosewood",
+          "hex": "#A05555"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pale Lemon",
+          "hex": "#FFF7A8"
+        },
+        {
+          "name": "Ash Gray",
+          "hex": "#D3D4D6"
+        },
+        {
+          "name": "Fluorescent Green",
+          "hex": "#62FF00"
+        }
+      ]
+    }
+  },
+  "tone_4": {
+    "cool": {
+      "best": [
+        {
+          "name": "Deep Sapphire",
+          "hex": "#103B73"
+        },
+        {
+          "name": "Mulberry Wine",
+          "hex": "#722D4D"
+        },
+        {
+          "name": "Cedar Green",
+          "hex": "#1E5132"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pumpkin Orange",
+          "hex": "#F07F13"
+        },
+        {
+          "name": "Golden Khaki",
+          "hex": "#C3A35A"
+        },
+        {
+          "name": "Pale Peach Beige",
+          "hex": "#EFD5C2"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Burnt Sienna",
+          "hex": "#B35435"
+        },
+        {
+          "name": "Honey Bronze",
+          "hex": "#A0752A"
+        },
+        {
+          "name": "Warm Burgundy",
+          "hex": "#6E1F1F"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Icy Sky Blue",
+          "hex": "#C9E9FF"
+        },
+        {
+          "name": "Neon Fuchsia",
+          "hex": "#FF1493"
+        },
+        {
+          "name": "Powder Lavender",
+          "hex": "#D9C4F1"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Dusty Plum",
+          "hex": "#8A5E72"
+        },
+        {
+          "name": "Steel Teal",
+          "hex": "#3B6E6E"
+        },
+        {
+          "name": "Mauve Cocoa",
+          "hex": "#A6796B"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Dusty Beige",
+          "hex": "#D9C6B5"
+        },
+        {
+          "name": "Yellow Pastel",
+          "hex": "#FFF6A1"
+        },
+        {
+          "name": "Lime Neon",
+          "hex": "#AEFF00"
+        }
+      ]
+    }
+  },
+  "tone_5": {
+    "cool": {
+      "best": [
+        {
+          "name": "Deep Teal",
+          "hex": "#0F4C4A"
+        },
+        {
+          "name": "Blackberry Purple",
+          "hex": "#3E1B3A"
+        },
+        {
+          "name": "Midnight Blue",
+          "hex": "#08233B"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Warm Mustard",
+          "hex": "#D9A100"
+        },
+        {
+          "name": "Neon Tangerine",
+          "hex": "#FF6B0A"
+        },
+        {
+          "name": "Ash Gray",
+          "hex": "#C8C9C7"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Rust Brown",
+          "hex": "#A0431E"
+        },
+        {
+          "name": "Marigold Ochre",
+          "hex": "#DA8B18"
+        },
+        {
+          "name": "Cocoa Brick",
+          "hex": "#6B2B23"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Ice Lavender",
+          "hex": "#DAD0FF"
+        },
+        {
+          "name": "Powder Mint",
+          "hex": "#C7F5D4"
+        },
+        {
+          "name": "Dusty Blue-Gray",
+          "hex": "#9BA9B4"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Smoky Rosewood",
+          "hex": "#7D4A4A"
+        },
+        {
+          "name": "Pewter Blue",
+          "hex": "#607B8B"
+        },
+        {
+          "name": "Soft Mulberry",
+          "hex": "#8E4F6E"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Beige-Taupe",
+          "hex": "#C8B39C"
+        },
+        {
+          "name": "Pale Lemon",
+          "hex": "#FFF6A5"
+        },
+        {
+          "name": "Neon Lime",
+          "hex": "#B5FF00"
+        }
+      ]
+    }
+  },
+  "tone_6": {
+    "cool": {
+      "best": [
+        {
+          "name": "Sapphire Blue",
+          "hex": "#0F3C75"
+        },
+        {
+          "name": "Deep Fig Purple",
+          "hex": "#4E1E3A"
+        },
+        {
+          "name": "Teal Navy",
+          "hex": "#0A4A4A"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Light Peach",
+          "hex": "#F6D0B6"
+        },
+        {
+          "name": "Acid Yellow",
+          "hex": "#EFFF00"
+        },
+        {
+          "name": "Dusty Sand Beige",
+          "hex": "#D6C2A8"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Burnt Copper",
+          "hex": "#A44921"
+        },
+        {
+          "name": "Golden Saffron",
+          "hex": "#D8860B"
+        },
+        {
+          "name": "Warm Espresso Brown",
+          "hex": "#4B2C23"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Icy Baby Blue",
+          "hex": "#CDE9FF"
+        },
+        {
+          "name": "Pastel Lavender",
+          "hex": "#E2D2FA"
+        },
+        {
+          "name": "Light Gray",
+          "hex": "#D3D3D3"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Blackened Plum",
+          "hex": "#3C1F2D"
+        },
+        {
+          "name": "Stormy Teal",
+          "hex": "#2E5E63"
+        },
+        {
+          "name": "Cedar Brown",
+          "hex": "#6C4A2E"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Cool Ash Taupe",
+          "hex": "#B6ADA4"
+        },
+        {
+          "name": "Pale Mint",
+          "hex": "#C5F7E7"
+        },
+        {
+          "name": "Neon Green",
+          "hex": "#5BFF00"
+        }
+      ]
+    }
+  },
+  "tone_7": {
+    "cool": {
+      "best": [
+        {
+          "name": "Deep Indigo Blue",
+          "hex": "#1A2E5A"
+        },
+        {
+          "name": "Black Cherry",
+          "hex": "#3B0D1A"
+        },
+        {
+          "name": "Pine Teal",
+          "hex": "#0C4C47"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pastel Blue",
+          "hex": "#CBE4FF"
+        },
+        {
+          "name": "Dusty Mauve",
+          "hex": "#B9A2B3"
+        },
+        {
+          "name": "Light Sand Beige",
+          "hex": "#E5D8C7"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Burnt Umber",
+          "hex": "#6A3A1A"
+        },
+        {
+          "name": "Ember Red",
+          "hex": "#B22A1C"
+        },
+        {
+          "name": "Caramel Bronze",
+          "hex": "#A46A2B"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Lemon Yellow",
+          "hex": "#FFF44F"
+        },
+        {
+          "name": "Peach Pastel",
+          "hex": "#F8C9B0"
+        },
+        {
+          "name": "Cool Ash Gray",
+          "hex": "#C9C9C9"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Deep Mauve Brown",
+          "hex": "#633A46"
+        },
+        {
+          "name": "Petrol Blue",
+          "hex": "#224B5E"
+        },
+        {
+          "name": "Mahogany Red",
+          "hex": "#61221C"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pale Lavender",
+          "hex": "#E3D6FA"
+        },
+        {
+          "name": "Mint Chalk",
+          "hex": "#C8F7E2"
+        },
+        {
+          "name": "Neon Chartreuse",
+          "hex": "#C6FF00"
+        }
+      ]
+    }
+  },
+  "tone_8": {
+    "cool": {
+      "best": [
+        {
+          "name": "Royal Sapphire",
+          "hex": "#16316B"
+        },
+        {
+          "name": "Eggplant Purple",
+          "hex": "#3A133E"
+        },
+        {
+          "name": "Deep Teal Green",
+          "hex": "#084A45"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Baby Blue",
+          "hex": "#CDE5FF"
+        },
+        {
+          "name": "Soft Lavender Gray",
+          "hex": "#D4CFE0"
+        },
+        {
+          "name": "Sandy Beige",
+          "hex": "#E7D7C5"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Molten Copper",
+          "hex": "#AC4F1A"
+        },
+        {
+          "name": "Rich Maroon",
+          "hex": "#6A0F14"
+        },
+        {
+          "name": "Golden Amber",
+          "hex": "#D3820E"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pastel Orange",
+          "hex": "#FBC6A4"
+        },
+        {
+          "name": "Cool Mist Gray",
+          "hex": "#C6CFD3"
+        },
+        {
+          "name": "Light Butter Yellow",
+          "hex": "#FFF6A1"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Raisin Plum",
+          "hex": "#4D243A"
+        },
+        {
+          "name": "Slate Petrol",
+          "hex": "#295864"
+        },
+        {
+          "name": "Cinnamon Brown",
+          "hex": "#7A4320"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Powder Pink",
+          "hex": "#F4C7D6"
+        },
+        {
+          "name": "Dusty Olive",
+          "hex": "#B0A87A"
+        },
+        {
+          "name": "Neon Lime",
+          "hex": "#9CFF00"
+        }
+      ]
+    }
+  },
+  "tone_9": {
+    "cool": {
+      "best": [
+        {
+          "name": "Royal Cobalt",
+          "hex": "#12369C"
+        },
+        {
+          "name": "Deep Aubergine",
+          "hex": "#2A0F2A"
+        },
+        {
+          "name": "Emerald Teal",
+          "hex": "#005A52"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Pastel Sky Blue",
+          "hex": "#CDEAFF"
+        },
+        {
+          "name": "Muted Purple Gray",
+          "hex": "#BBAEC4"
+        },
+        {
+          "name": "Warm Beige",
+          "hex": "#E2CFB6"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Metallic Bronze",
+          "hex": "#8C4B1F"
+        },
+        {
+          "name": "Blood Red",
+          "hex": "#8A0C14"
+        },
+        {
+          "name": "Golden Curry",
+          "hex": "#B97C0C"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Peach Blush",
+          "hex": "#FBC7A6"
+        },
+        {
+          "name": "Powder Yellow",
+          "hex": "#FFF6A3"
+        },
+        {
+          "name": "Silver Gray",
+          "hex": "#C9D0D4"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Deep Clove Brown",
+          "hex": "#4A2716"
+        },
+        {
+          "name": "Petrol Slate",
+          "hex": "#274C50"
+        },
+        {
+          "name": "Mulberry Wine",
+          "hex": "#5A2235"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Dusty Sage",
+          "hex": "#B1B89A"
+        },
+        {
+          "name": "Baby Lavender",
+          "hex": "#E5D5FF"
+        },
+        {
+          "name": "Neon Lime Green",
+          "hex": "#8FFF00"
+        }
+      ]
+    }
+  },
+  "tone_10": {
+    "cool": {
+      "best": [
+        {
+          "name": "Royal Sapphire Blue",
+          "hex": "#0B2F91"
+        },
+        {
+          "name": "Blackcurrant Purple",
+          "hex": "#2A0E2A"
+        },
+        {
+          "name": "Deep Lagoon Teal",
+          "hex": "#004743"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Baby Blue",
+          "hex": "#CDEAFF"
+        },
+        {
+          "name": "Lavender Gray",
+          "hex": "#C9C4D2"
+        },
+        {
+          "name": "Ash Beige",
+          "hex": "#E2D3C3"
+        }
+      ]
+    },
+    "warm": {
+      "best": [
+        {
+          "name": "Molten Gold",
+          "hex": "#C27A14"
+        },
+        {
+          "name": "Oxblood Red",
+          "hex": "#690E14"
+        },
+        {
+          "name": "Rich Henna Brown",
+          "hex": "#5A2B1B"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Peach Pastel",
+          "hex": "#F7C5A5"
+        },
+        {
+          "name": "Butter Yellow",
+          "hex": "#FFF8A6"
+        },
+        {
+          "name": "Cool Silver Gray",
+          "hex": "#C5CCD0"
+        }
+      ]
+    },
+    "neutral": {
+      "best": [
+        {
+          "name": "Blackberry Wine",
+          "hex": "#4B1D3A"
+        },
+        {
+          "name": "Midnight Petrol",
+          "hex": "#1C474E"
+        },
+        {
+          "name": "Espresso Umber",
+          "hex": "#3A1F13"
+        }
+      ],
+      "avoid": [
+        {
+          "name": "Dusty Sage",
+          "hex": "#B4B897"
+        },
+        {
+          "name": "Powder Pink",
+          "hex": "#F1BFD1"
+        },
+        {
+          "name": "Neon Chartreuse",
+          "hex": "#A6FF00"
+        }
+      ]
+    }
+  }
+}
