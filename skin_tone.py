@@ -42,7 +42,6 @@ from sklearn.mixture import GaussianMixture
 from colormath.color_objects import sRGBColor, LabColor
 from colormath.color_conversions import convert_color
 from colormath.color_diff import delta_e_cie2000
-from image_quality import check_image_quality, quality_warning_message
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -248,10 +247,15 @@ def sclera_wb(rgb: np.ndarray, eye_mask: np.ndarray,
     sel = rgb[scl].astype(float)
     mb, mg, mr = sel[:,0].mean()+1e-6, sel[:,1].mean()+1e-6, sel[:,2].mean()+1e-6
     gray = (mb+mg+mr)/3.0
+    
+    # Auto-exposure: push sclera brightness to ~230 if underexposed
+    # Limit gain to [1.0, 2.0] so we don't darken images or over-blow them.
+    gain = min(2.0, max(1.0, 230.0 / max(gray, 50.0)))
+    
     f = rgb.astype(np.float32)
-    f[...,0] *= float(np.clip(gray/mb, 1-max_shift, 1+max_shift))
-    f[...,1] *= float(np.clip(gray/mg, 1-max_shift, 1+max_shift))
-    f[...,2] *= float(np.clip(gray/mr, 1-max_shift, 1+max_shift))
+    f[...,0] *= float(gain * np.clip(gray/mb, 1-max_shift, 1+max_shift))
+    f[...,1] *= float(gain * np.clip(gray/mg, 1-max_shift, 1+max_shift))
+    f[...,2] *= float(gain * np.clip(gray/mr, 1-max_shift, 1+max_shift))
     return np.clip(f, 0, 255).astype(np.uint8)
 
 def shades_of_gray_wb(rgb: np.ndarray, p: int = 6,
@@ -275,7 +279,9 @@ def shades_of_gray_wb(rgb: np.ndarray, p: int = 6,
 def ycrcb_skin_mask(rgb: np.ndarray, dark_skin: bool = False) -> np.ndarray:
     """
     YCrCb skin detection. More robust than HSV alone.
-    Dark skin uses wider Cr/Cb range to avoid under-segmentation.
+    We use a relaxed Cr lower bound (120) for all skin types to ensure that
+    extremely pale/albino skin (which can lose redness after white balance)
+    is not incorrectly rejected as background.
     """
     ycrcb = cv2.cvtColor(rgb, cv2.COLOR_RGB2YCrCb)
     Cr = ycrcb[...,1].astype(int)
@@ -283,7 +289,8 @@ def ycrcb_skin_mask(rgb: np.ndarray, dark_skin: bool = False) -> np.ndarray:
     if dark_skin:
         mask = ((Cr >= 120) & (Cr <= 185) & (Cb >= 70) & (Cb <= 145))
     else:
-        mask = ((Cr >= 128) & (Cr <= 180) & (Cb >= 72) & (Cb <= 140))
+        # Relaxed lower bounds to catch very pale/cool skin
+        mask = ((Cr >= 120) & (Cr <= 180) & (Cb >= 70) & (Cb <= 140))
     return mask.astype(np.uint8) * 255
 
 
@@ -465,6 +472,21 @@ def median_L_of(px: np.ndarray) -> float:
     lab = _to_lab_d65(tuple(med / 255.0))
     return float(lab.lab_l)
 
+def fast_L_of(px: np.ndarray) -> np.ndarray:
+    """
+    Fast vectorised L* extraction using OpenCV LAB (D65-approximate).
+    Returns a 1-D float array of L* values for each pixel in px (Nx3 uint8).
+    ~100x faster than calling _to_lab_d65 per pixel.
+    NOTE: OpenCV uses illuminant D65 for sRGB->LAB conversion (same reference
+          as colormath), so results are equivalent for skin-tone decisions.
+    """
+    if px is None or px.shape[0] == 0:
+        return np.array([], dtype=np.float32)
+    img = px.astype(np.uint8).reshape(-1, 1, 3)  # Nx1x3 RGB
+    bgr = img[:, :, ::-1]                         # -> BGR for OpenCV
+    lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB)
+    # OpenCV L channel is 0-255 mapped from 0-100
+    return lab[:, 0, 0].astype(np.float32) * (100.0 / 255.0)
 
 # ══════════════════════════════════════════════════════════════════════
 # 11. L*-ANCHORED TWO-STAGE TONE CLASSIFICATION  (core fix)
@@ -483,37 +505,46 @@ def classify_tone(skin_pixels: np.ndarray,
 
     Returns (tone 1-10, confidence 0-1, measured_L).
     """
-    # Stage 1: L* anchor
+    # Stage 1: ITA anchor (Lighting invariant)
+    v   = _ensure3(fused_rgb)
+    lab = _to_lab_d65(tuple(v / 255.0))
     measured_L = median_L_of(skin_pixels)
-    L_dists    = np.abs(MONK_L_D65 - measured_L)
-    anchor_idx = int(np.argmin(L_dists))   # 0-indexed
+    measured_b = lab.lab_b
+    
+    import math
+    # Compute reference ITA for Monk scale dynamically if not already computed
+    if not hasattr(classify_tone, "MONK_ITA"):
+        classify_tone.MONK_ITA = np.array([
+            math.atan2(m_lab.lab_l - 50, m_lab.lab_b) * 180 / math.pi 
+            for m_lab in MONK_TONES_LAB_D65
+        ])
+    
+    measured_ita = math.atan2(measured_L - 50, measured_b) * 180 / math.pi
+    ita_dists = np.abs(classify_tone.MONK_ITA - measured_ita)
+    anchor_idx = int(np.argmin(ita_dists))   # 0-indexed
 
     # Stage 2: score each candidate in ±window
     lo = max(0, anchor_idx - window)
     hi = min(9, anchor_idx + window)
 
-    v   = _ensure3(fused_rgb)
-    lab = _to_lab_d65(tuple(v / 255.0))
-
     scores = {}
     for idx in range(lo, hi + 1):
         dE_total = delta_e_cie2000(lab, MONK_TONES_LAB_D65[idx])
-        # L* deviation penalty — weighted by how tight the L* cluster is:
-        # For Monks 1-3 (L* gap ~1-5), a 2-unit L* shift matters a lot.
-        # For Monks 5-8 (L* gap ~10-23), L* has more room to move.
-        ref_L     = MONK_L_D65[idx]
-        L_dev     = abs(measured_L - ref_L)
-        # Penalty weight: inversely scaled by the neighbouring L* gap
+        
+        ref_ita = classify_tone.MONK_ITA[idx]
+        ita_dev = abs(measured_ita - ref_ita)
+        
+        # Penalty weight: inversely scaled by the neighbouring ITA gap
         if idx > 0 and idx < 9:
-            L_gap = (abs(MONK_L_D65[idx] - MONK_L_D65[idx-1]) +
-                     abs(MONK_L_D65[idx] - MONK_L_D65[idx+1])) / 2.0
+            ita_gap = (abs(classify_tone.MONK_ITA[idx] - classify_tone.MONK_ITA[idx-1]) +
+                       abs(classify_tone.MONK_ITA[idx] - classify_tone.MONK_ITA[idx+1])) / 2.0
         elif idx == 0:
-            L_gap = abs(MONK_L_D65[0] - MONK_L_D65[1])
+            ita_gap = abs(classify_tone.MONK_ITA[0] - classify_tone.MONK_ITA[1])
         else:
-            L_gap = abs(MONK_L_D65[9] - MONK_L_D65[8])
-        # When L* gap between neighbours is small (tight cluster), penalise more
-        L_weight  = float(np.clip(8.0 / max(L_gap, 1.0), 0.3, 2.5))
-        penalty   = L_dev * L_weight
+            ita_gap = abs(classify_tone.MONK_ITA[9] - classify_tone.MONK_ITA[8])
+            
+        ita_weight = float(np.clip(10.0 / max(ita_gap, 1.0), 0.5, 3.0))
+        penalty    = ita_dev * ita_weight * 1.5
         scores[idx] = dE_total + penalty
 
     best_idx  = min(scores, key=scores.get)
@@ -523,7 +554,7 @@ def classify_tone(skin_pixels: np.ndarray,
     sorted_scores = sorted(scores.values())
     if len(sorted_scores) >= 2:
         margin = sorted_scores[1] - sorted_scores[0]
-        conf   = float(np.clip(margin / 5.0, 0.0, 1.0))
+        conf   = float(np.clip(margin / 10.0, 0.0, 1.0))
     else:
         conf = 0.80
 
@@ -638,10 +669,7 @@ def classify_monk_v10(image_path: str, debug: bool = False) -> dict:
     lm, bbox = detect_mesh(rgb)
     if lm is None: return _default_result("No face landmarks.")
 
-    # ── Quality gate ──────────────────────────────────────────────────
-    quality = check_image_quality(rgb, face_landmarks=lm)
-    if not quality["is_usable"]:
-        return _default_result(quality_warning_message(quality), quality=quality)
+    quality = {}
 
     # ── Auto-pad if face fills frame ──────────────────────────────────
     rgb_p, padded = auto_pad(rgb, bbox, debug, sdir, name)
@@ -660,32 +688,36 @@ def classify_monk_v10(image_path: str, debug: bool = False) -> dict:
     mr        = cv2.bitwise_and(mr, cv2.bitwise_not(excl))
     cheeks    = cv2.bitwise_or(ml, mr)
 
-    # ── Estimate skin brightness from RAW cheek pixels ───────────────
+    # ── Estimate skin brightness from YCrCb-PRE-FILTERED cheek pixels ──
+    # (Using raw unfiltered pixels causes hair/shadow to corrupt the estimate)
     raw_cheek_px = rgb[cheeks > 0]
-    skin_L_mean  = median_L_of(raw_cheek_px) if raw_cheek_px.size > 0 else 60.0
-    dark_skin    = skin_L_mean < 46.0   # Monks 7-10
+    if raw_cheek_px.shape[0] > 0:
+        # Quick YCrCb skin pre-filter on the raw cheek region
+        _ycrcb_raw = cv2.cvtColor(rgb, cv2.COLOR_RGB2YCrCb)
+        _Cr_cheek  = _ycrcb_raw[..., 1][cheeks > 0].astype(int)
+        _Cb_cheek  = _ycrcb_raw[..., 2][cheeks > 0].astype(int)
+        _skin_sel  = (_Cr_cheek >= 115) & (_Cr_cheek <= 190) & \
+                     (_Cb_cheek >=  68) & (_Cb_cheek <= 148)
+        _filtered  = raw_cheek_px[_skin_sel]
+        # Keep top 60% brightest to remove shadows from the estimate
+        if _filtered.shape[0] >= 40:
+            _L_arr     = fast_L_of(_filtered)
+            _hi_thresh = np.percentile(_L_arr, 40)  # keep upper 60%
+            _bright    = _filtered[_L_arr >= _hi_thresh]
+            skin_L_mean = float(np.mean(_L_arr[_L_arr >= _hi_thresh])) \
+                          if _bright.shape[0] >= 20 else median_L_of(_filtered)
+        else:
+            skin_L_mean = median_L_of(raw_cheek_px)
+    else:
+        skin_L_mean = 60.0
+    dark_skin = skin_L_mean < 46.0   # Monks 7-10
 
     print(f"[v12] skin_L_mean={skin_L_mean:.1f}  dark_skin={dark_skin}")
 
-    # ── CLAHE (disabled for dark skin to prevent L* inflation) ────────
-    if not dark_skin:
-        x1,y1,x2,y2 = bbox
-        h, w = rgb.shape[:2]
-        x1,y1,x2,y2 = max(0,x1),max(0,y1),min(w,x2),min(h,y2)
-        if x2 > x1 and y2 > y1:
-            face_patch = rgb[y1:y2, x1:x2].copy()
-            lab_p = cv2.cvtColor(face_patch, cv2.COLOR_RGB2LAB)
-            L_ch, a_ch, b_ch = cv2.split(lab_p)
-            clahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(8,8))
-            lab_eq = cv2.merge([clahe.apply(L_ch), a_ch, b_ch])
-            rgb[y1:y2, x1:x2] = cv2.cvtColor(lab_eq, cv2.COLOR_LAB2RGB)
 
-    # ── White balance (conservative) ──────────────────────────────────
-    max_wb = 0.12 if dark_skin else 0.15
-    eye_m  = eyes_mask(rgb, lm)
-    rgb_wb = sclera_wb(rgb, eye_m, max_shift=max_wb)
-    if rgb_wb is None:
-        rgb_wb = shades_of_gray_wb(rgb, p=6, max_shift=max_wb) if not dark_skin else rgb.copy()
+    # ── No Image Enhancement (Raw Data Only) ──────────────────────────
+    # User requested removing image quality enhancement to preserve raw accuracy
+    rgb_wb = rgb.copy()
 
     # ── Forehead + nose secondary regions ────────────────────────────
     fore  = forehead_mask(rgb_wb, lm, skin_L_mean=skin_L_mean)
@@ -726,13 +758,50 @@ def classify_monk_v10(image_path: str, debug: bool = False) -> dict:
     px_nose    = _px(nose)
 
     # ── Build combined pixel pool for tone classification ─────────────
-    # Priority: inner cheeks (most reliable) > full cheeks > forehead > nose
+    # Priority: inner cheeks > full cheeks > forehead > nose
     pools = [p for p in [px_inner, px_full_ck, px_fore, px_nose] if p is not None]
-    all_px = np.vstack(pools) if pools else src[inner_cheeks > 0]
-    if all_px.shape[0] < 60:
-        all_px = src[cheeks_wb > 0]
-    if all_px.shape[0] < 30:
-        all_px = src.reshape(-1, 3)  # last resort: full image
+    all_px = np.vstack(pools) if pools else None
+
+    # ── RE-ANCHOR skin_L_mean from clean pixels (corrects bad initial estimate) ─
+    # If the raw estimate was corrupted by hair/shadow, the clean pixels tell truth
+    if all_px is not None and all_px.shape[0] >= 60:
+        _clean_L = fast_L_of(all_px)              # vectorised — fast
+        _lo_c, _hi_c = np.percentile(_clean_L, [50, 90])
+        _mask_mid    = (_clean_L >= _lo_c) & (_clean_L <= _hi_c)
+        if _mask_mid.sum() >= 20:
+            skin_L_mean_refined = float(np.mean(_clean_L[_mask_mid]))
+            if abs(skin_L_mean_refined - skin_L_mean) > 8.0:
+                print(f"[v12] skin_L_mean corrected: {skin_L_mean:.1f} -> {skin_L_mean_refined:.1f}")
+                skin_L_mean = skin_L_mean_refined
+                dark_skin   = skin_L_mean < 46.0
+                if skin_L_mean > 70:
+                    lo_pct, hi_pct = 20.0, 95.0
+                elif skin_L_mean > 45:
+                    lo_pct, hi_pct = 10.0, 95.0
+                else:
+                    lo_pct, hi_pct = 5.0, 95.0
+                def _px2(region_mask):
+                    return get_clean_skin_pixels(src, region_mask, skin_L_mean,
+                                                  dark_skin=dark_skin,
+                                                  lo_pct=lo_pct, hi_pct=hi_pct)
+                pools2 = [p for p in [_px2(inner_cheeks), _px2(cheeks_wb),
+                                       _px2(fore), _px2(nose)] if p is not None]
+                if pools2:
+                    all_px = np.vstack(pools2)
+
+    # ── Safe fallback: percentile-filtered mask pixels (never raw) ────
+    if all_px is None or all_px.shape[0] < 60:
+        _fb_mask = percentile_L_mask(src, cheeks_wb, 15.0, 85.0)
+        _fb_px   = src[_fb_mask > 0] if _fb_mask is not None else src[cheeks_wb > 0]
+        all_px   = _fb_px if _fb_px.shape[0] >= 30 else all_px
+    if all_px is None or all_px.shape[0] < 30:
+        _ck_px = src[cheeks_wb > 0]
+        if _ck_px.shape[0] > 0:
+            _L_ck  = fast_L_of(_ck_px)
+            _thresh = np.percentile(_L_ck, 33)
+            all_px  = _ck_px[_L_ck >= _thresh]
+        else:
+            all_px = np.array([[128,128,128]], dtype=np.uint8)
 
     # ── Fused representative color (GMM dominant) ─────────────────────
     fused = gmm_dominant(all_px)

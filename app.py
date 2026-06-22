@@ -47,24 +47,12 @@ def analyze():
         flash("Could not analyze the photo. Try a clearer, front-facing image.")
         return redirect(url_for("index"))
 
-    # If image quality check blocked analysis (tone_confidence == 0 and quality warnings)
-    quality  = result.get("quality", {})
-    warnings = quality.get("warnings", [])
-    if warnings and not quality.get("is_usable", True):
-        # Surface user-friendly message from the quality gate
-        from image_quality import quality_warning_message
-        msg = quality_warning_message(quality)
-        flash(msg or "Image quality too low. Please try another photo.")
-        return redirect(url_for("index"))
-
     tone          = result.get("tone", 5)
     undertone     = result.get("undertone", "Neutral")
     tone_conf     = result.get("tone_confidence", 0.0)
     ut_conf       = result.get("ut_confidence", 0.0)
     best_colors   = result.get("best_colors",  []) or []
     avoid_colors  = result.get("avoid_colors", []) or []
-    # Soft warning for non-frontal face (analysis ran but confidence may be reduced)
-    soft_warning  = "NON_FRONTAL_FACE" in warnings
 
     return render_template(
         "result.html",
@@ -75,7 +63,7 @@ def analyze():
         ut_conf      = ut_conf,
         best_colors  = best_colors,
         avoid_colors = avoid_colors,
-        soft_warning = soft_warning,
+        soft_warning = False,
     )
 
 
