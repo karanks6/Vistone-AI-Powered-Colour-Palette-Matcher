@@ -3,90 +3,90 @@
     "cool": {
       "best": [
         {
-          "name": "Deep Charcoal Blue",
-          "hex": "#1C2A39"
+          "name": "Powder Blue",
+          "hex": "#9AB2CD"
         },
         {
-          "name": "Soft Berry Pink",
-          "hex": "#C25B7C"
+          "name": "Soft Raspberry",
+          "hex": "#B86C85"
         },
         {
-          "name": "Cool Emerald",
-          "hex": "#006F52"
+          "name": "Cool Navy",
+          "hex": "#2B3A4A"
         }
       ],
       "avoid": [
         {
-          "name": "Pale Peach",
-          "hex": "#F7CBB2"
+          "name": "Mustard Yellow",
+          "hex": "#D4AF37"
         },
         {
-          "name": "Neon Lime",
-          "hex": "#C7F707"
+          "name": "Warm Orange",
+          "hex": "#E07A5F"
         },
         {
-          "name": "Ivory Beige",
-          "hex": "#E9E3D0"
+          "name": "Olive Green",
+          "hex": "#6B705C"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Muted Teal",
-          "hex": "#317873"
+          "name": "Warm Peach",
+          "hex": "#F4B084"
         },
         {
-          "name": "Soft Coral Rose",
-          "hex": "#E07A7A"
+          "name": "Soft Turquoise",
+          "hex": "#40C0CB"
         },
         {
-          "name": "Earthy Olive Green",
-          "hex": "#708238"
+          "name": "Buttercup Yellow",
+          "hex": "#F2D388"
         }
       ],
       "avoid": [
         {
-          "name": "Lemon Yellow",
-          "hex": "#F7F44A"
+          "name": "Icy Blue",
+          "hex": "#D0E4F2"
         },
         {
-          "name": "Bright Tomato Red",
-          "hex": "#D43121"
+          "name": "Stark Black",
+          "hex": "#1A1A1A"
         },
         {
-          "name": "Cool Light Gray",
-          "hex": "#D5D8DC"
+          "name": "Magenta",
+          "hex": "#C21E56"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Dusty Lavender",
-          "hex": "#A998AE"
+          "name": "Dusty Rose",
+          "hex": "#C5969E"
         },
         {
-          "name": "Slate Blue",
-          "hex": "#516B84"
+          "name": "Muted Teal",
+          "hex": "#5A8B8C"
         },
         {
-          "name": "Peony Pink",
-          "hex": "#D979A5"
+          "name": "Soft Taupe",
+          "hex": "#A89C94"
         }
       ],
       "avoid": [
         {
-          "name": "Pastel Mint",
-          "hex": "#C8F7DC"
+          "name": "Neon Green",
+          "hex": "#7DF9FF"
         },
         {
-          "name": "Beige Tan",
-          "hex": "#D7CBB6"
+          "name": "Pure Orange",
+          "hex": "#FF7F50"
         },
         {
-          "name": "Neon Orange",
-          "hex": "#FF6A00"
+          "name": "Stark White",
+          "hex": "#F8F8FF"
         }
       ]
     }
@@ -95,90 +95,90 @@
     "cool": {
       "best": [
         {
-          "name": "Midnight Navy",
-          "hex": "#0A1A37"
+          "name": "Powder Blue",
+          "hex": "#9AB2CD"
         },
         {
-          "name": "Mauve Rose",
-          "hex": "#B17894"
+          "name": "Soft Raspberry",
+          "hex": "#B86C85"
         },
         {
-          "name": "Deep Forest Green",
-          "hex": "#0E4D34"
+          "name": "Cool Navy",
+          "hex": "#2B3A4A"
         }
       ],
       "avoid": [
         {
-          "name": "Warm Mustard Yellow",
-          "hex": "#D6A700"
+          "name": "Mustard Yellow",
+          "hex": "#D4AF37"
         },
         {
-          "name": "Electric Orange",
-          "hex": "#FF6600"
+          "name": "Warm Orange",
+          "hex": "#E07A5F"
         },
         {
-          "name": "Pale Sand Beige",
-          "hex": "#E4D7C6"
+          "name": "Olive Green",
+          "hex": "#6B705C"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Terracotta Clay",
-          "hex": "#C76A50"
+          "name": "Warm Peach",
+          "hex": "#F4B084"
         },
         {
-          "name": "Warm Moss Green",
-          "hex": "#6B7C43"
+          "name": "Soft Turquoise",
+          "hex": "#40C0CB"
         },
         {
-          "name": "Muted Cranberry",
-          "hex": "#8E2C3A"
+          "name": "Buttercup Yellow",
+          "hex": "#F2D388"
         }
       ],
       "avoid": [
         {
-          "name": "Ice Blue",
-          "hex": "#CFE9F8"
+          "name": "Icy Blue",
+          "hex": "#D0E4F2"
         },
         {
-          "name": "Neon Pink",
-          "hex": "#FF0F87"
+          "name": "Stark Black",
+          "hex": "#1A1A1A"
         },
         {
-          "name": "Pastel Lavender",
-          "hex": "#E3D7F7"
+          "name": "Magenta",
+          "hex": "#C21E56"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Dusty Periwinkle",
-          "hex": "#8C90C6"
+          "name": "Dusty Rose",
+          "hex": "#C5969E"
         },
         {
-          "name": "Soft Steel Blue",
-          "hex": "#587794"
+          "name": "Muted Teal",
+          "hex": "#5A8B8C"
         },
         {
-          "name": "Blush Pink",
-          "hex": "#E3A6B5"
+          "name": "Soft Taupe",
+          "hex": "#A89C94"
         }
       ],
       "avoid": [
         {
-          "name": "Cold Ash Gray",
-          "hex": "#CBD0D3"
+          "name": "Neon Green",
+          "hex": "#7DF9FF"
         },
         {
-          "name": "Beige Peach",
-          "hex": "#EED8C2"
+          "name": "Pure Orange",
+          "hex": "#FF7F50"
         },
         {
-          "name": "Lime Green",
-          "hex": "#B8FF00"
+          "name": "Stark White",
+          "hex": "#F8F8FF"
         }
       ]
     }
@@ -187,90 +187,90 @@
     "cool": {
       "best": [
         {
-          "name": "Slate Navy",
-          "hex": "#253A55"
+          "name": "Powder Blue",
+          "hex": "#9AB2CD"
         },
         {
-          "name": "Dusty Rose",
-          "hex": "#C48A9A"
+          "name": "Soft Raspberry",
+          "hex": "#B86C85"
         },
         {
-          "name": "Pine Green",
-          "hex": "#0E5A46"
+          "name": "Cool Navy",
+          "hex": "#2B3A4A"
         }
       ],
       "avoid": [
         {
-          "name": "Golden Yellow",
-          "hex": "#F2C200"
+          "name": "Mustard Yellow",
+          "hex": "#D4AF37"
         },
         {
-          "name": "Neon Coral",
-          "hex": "#FF5A4D"
+          "name": "Warm Orange",
+          "hex": "#E07A5F"
         },
         {
-          "name": "Pale Warm Beige",
-          "hex": "#EEDAC8"
+          "name": "Olive Green",
+          "hex": "#6B705C"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Muted Terracotta",
-          "hex": "#B9654A"
+          "name": "Warm Peach",
+          "hex": "#F4B084"
         },
         {
-          "name": "Golden Olive",
-          "hex": "#7C8034"
+          "name": "Soft Turquoise",
+          "hex": "#40C0CB"
         },
         {
-          "name": "Brick Red",
-          "hex": "#8F2E2C"
+          "name": "Buttercup Yellow",
+          "hex": "#F2D388"
         }
       ],
       "avoid": [
         {
-          "name": "Icy Mint",
-          "hex": "#C9FCEE"
+          "name": "Icy Blue",
+          "hex": "#D0E4F2"
         },
         {
-          "name": "Bright Magenta",
-          "hex": "#FF0D91"
+          "name": "Stark Black",
+          "hex": "#1A1A1A"
         },
         {
-          "name": "Powder Blue",
-          "hex": "#C5D9F1"
+          "name": "Magenta",
+          "hex": "#C21E56"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Smoky Lavender",
-          "hex": "#9A8FAF"
+          "name": "Dusty Rose",
+          "hex": "#C5969E"
         },
         {
-          "name": "Storm Blue",
-          "hex": "#486A8C"
+          "name": "Muted Teal",
+          "hex": "#5A8B8C"
         },
         {
-          "name": "Neutral Rosewood",
-          "hex": "#A05555"
+          "name": "Soft Taupe",
+          "hex": "#A89C94"
         }
       ],
       "avoid": [
         {
-          "name": "Pale Lemon",
-          "hex": "#FFF7A8"
+          "name": "Neon Green",
+          "hex": "#7DF9FF"
         },
         {
-          "name": "Ash Gray",
-          "hex": "#D3D4D6"
+          "name": "Pure Orange",
+          "hex": "#FF7F50"
         },
         {
-          "name": "Fluorescent Green",
-          "hex": "#62FF00"
+          "name": "Stark White",
+          "hex": "#F8F8FF"
         }
       ]
     }
@@ -279,90 +279,90 @@
     "cool": {
       "best": [
         {
-          "name": "Deep Sapphire",
-          "hex": "#103B73"
+          "name": "Deep Ruby",
+          "hex": "#8A2642"
         },
         {
-          "name": "Mulberry Wine",
-          "hex": "#722D4D"
+          "name": "Sapphire Blue",
+          "hex": "#0F4C81"
         },
         {
-          "name": "Cedar Green",
-          "hex": "#1E5132"
+          "name": "Emerald Green",
+          "hex": "#2D735B"
         }
       ],
       "avoid": [
         {
-          "name": "Pumpkin Orange",
-          "hex": "#F07F13"
+          "name": "Warm Mustard",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Golden Khaki",
-          "hex": "#C3A35A"
+          "name": "Burnt Orange",
+          "hex": "#C65D47"
         },
         {
-          "name": "Pale Peach Beige",
-          "hex": "#EFD5C2"
+          "name": "Earthy Olive",
+          "hex": "#5F6A42"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Burnt Sienna",
-          "hex": "#B35435"
+          "name": "Rich Terracotta",
+          "hex": "#C65D47"
         },
         {
-          "name": "Honey Bronze",
-          "hex": "#A0752A"
+          "name": "Forest Olive",
+          "hex": "#5F6A42"
         },
         {
-          "name": "Warm Burgundy",
-          "hex": "#6E1F1F"
+          "name": "Warm Bronze",
+          "hex": "#9C6839"
         }
       ],
       "avoid": [
         {
-          "name": "Icy Sky Blue",
-          "hex": "#C9E9FF"
+          "name": "Frosty Pink",
+          "hex": "#E8B4C8"
         },
         {
-          "name": "Neon Fuchsia",
-          "hex": "#FF1493"
+          "name": "Electric Blue",
+          "hex": "#2B5BA4"
         },
         {
-          "name": "Powder Lavender",
-          "hex": "#D9C4F1"
+          "name": "Cool Ash Gray",
+          "hex": "#8A8D91"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Dusty Plum",
-          "hex": "#8A5E72"
+          "name": "Plum Wine",
+          "hex": "#6C3B53"
         },
         {
-          "name": "Steel Teal",
-          "hex": "#3B6E6E"
+          "name": "Slate Blue",
+          "hex": "#5C768D"
         },
         {
-          "name": "Mauve Cocoa",
-          "hex": "#A6796B"
+          "name": "Jade Green",
+          "hex": "#36826D"
         }
       ],
       "avoid": [
         {
-          "name": "Dusty Beige",
-          "hex": "#D9C6B5"
+          "name": "Hot Pink",
+          "hex": "#E85491"
         },
         {
-          "name": "Yellow Pastel",
-          "hex": "#FFF6A1"
+          "name": "Icy Mint",
+          "hex": "#AEE2CC"
         },
         {
-          "name": "Lime Neon",
-          "hex": "#AEFF00"
+          "name": "Pale Lemon",
+          "hex": "#F0E494"
         }
       ]
     }
@@ -371,90 +371,90 @@
     "cool": {
       "best": [
         {
-          "name": "Deep Teal",
-          "hex": "#0F4C4A"
+          "name": "Deep Ruby",
+          "hex": "#8A2642"
         },
         {
-          "name": "Blackberry Purple",
-          "hex": "#3E1B3A"
+          "name": "Sapphire Blue",
+          "hex": "#0F4C81"
         },
         {
-          "name": "Midnight Blue",
-          "hex": "#08233B"
+          "name": "Emerald Green",
+          "hex": "#2D735B"
         }
       ],
       "avoid": [
         {
           "name": "Warm Mustard",
-          "hex": "#D9A100"
+          "hex": "#D9A05B"
         },
         {
-          "name": "Neon Tangerine",
-          "hex": "#FF6B0A"
+          "name": "Burnt Orange",
+          "hex": "#C65D47"
         },
         {
-          "name": "Ash Gray",
-          "hex": "#C8C9C7"
+          "name": "Earthy Olive",
+          "hex": "#5F6A42"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Rust Brown",
-          "hex": "#A0431E"
+          "name": "Rich Terracotta",
+          "hex": "#C65D47"
         },
         {
-          "name": "Marigold Ochre",
-          "hex": "#DA8B18"
+          "name": "Forest Olive",
+          "hex": "#5F6A42"
         },
         {
-          "name": "Cocoa Brick",
-          "hex": "#6B2B23"
+          "name": "Warm Bronze",
+          "hex": "#9C6839"
         }
       ],
       "avoid": [
         {
-          "name": "Ice Lavender",
-          "hex": "#DAD0FF"
+          "name": "Frosty Pink",
+          "hex": "#E8B4C8"
         },
         {
-          "name": "Powder Mint",
-          "hex": "#C7F5D4"
+          "name": "Electric Blue",
+          "hex": "#2B5BA4"
         },
         {
-          "name": "Dusty Blue-Gray",
-          "hex": "#9BA9B4"
+          "name": "Cool Ash Gray",
+          "hex": "#8A8D91"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Smoky Rosewood",
-          "hex": "#7D4A4A"
+          "name": "Plum Wine",
+          "hex": "#6C3B53"
         },
         {
-          "name": "Pewter Blue",
-          "hex": "#607B8B"
+          "name": "Slate Blue",
+          "hex": "#5C768D"
         },
         {
-          "name": "Soft Mulberry",
-          "hex": "#8E4F6E"
+          "name": "Jade Green",
+          "hex": "#36826D"
         }
       ],
       "avoid": [
         {
-          "name": "Beige-Taupe",
-          "hex": "#C8B39C"
+          "name": "Hot Pink",
+          "hex": "#E85491"
+        },
+        {
+          "name": "Icy Mint",
+          "hex": "#AEE2CC"
         },
         {
           "name": "Pale Lemon",
-          "hex": "#FFF6A5"
-        },
-        {
-          "name": "Neon Lime",
-          "hex": "#B5FF00"
+          "hex": "#F0E494"
         }
       ]
     }
@@ -463,90 +463,90 @@
     "cool": {
       "best": [
         {
+          "name": "Deep Ruby",
+          "hex": "#8A2642"
+        },
+        {
           "name": "Sapphire Blue",
-          "hex": "#0F3C75"
+          "hex": "#0F4C81"
         },
         {
-          "name": "Deep Fig Purple",
-          "hex": "#4E1E3A"
-        },
-        {
-          "name": "Teal Navy",
-          "hex": "#0A4A4A"
+          "name": "Emerald Green",
+          "hex": "#2D735B"
         }
       ],
       "avoid": [
         {
-          "name": "Light Peach",
-          "hex": "#F6D0B6"
+          "name": "Warm Mustard",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Acid Yellow",
-          "hex": "#EFFF00"
+          "name": "Burnt Orange",
+          "hex": "#C65D47"
         },
         {
-          "name": "Dusty Sand Beige",
-          "hex": "#D6C2A8"
+          "name": "Earthy Olive",
+          "hex": "#5F6A42"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Burnt Copper",
-          "hex": "#A44921"
+          "name": "Rich Terracotta",
+          "hex": "#C65D47"
         },
         {
-          "name": "Golden Saffron",
-          "hex": "#D8860B"
+          "name": "Forest Olive",
+          "hex": "#5F6A42"
         },
         {
-          "name": "Warm Espresso Brown",
-          "hex": "#4B2C23"
+          "name": "Warm Bronze",
+          "hex": "#9C6839"
         }
       ],
       "avoid": [
         {
-          "name": "Icy Baby Blue",
-          "hex": "#CDE9FF"
+          "name": "Frosty Pink",
+          "hex": "#E8B4C8"
         },
         {
-          "name": "Pastel Lavender",
-          "hex": "#E2D2FA"
+          "name": "Electric Blue",
+          "hex": "#2B5BA4"
         },
         {
-          "name": "Light Gray",
-          "hex": "#D3D3D3"
+          "name": "Cool Ash Gray",
+          "hex": "#8A8D91"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Blackened Plum",
-          "hex": "#3C1F2D"
+          "name": "Plum Wine",
+          "hex": "#6C3B53"
         },
         {
-          "name": "Stormy Teal",
-          "hex": "#2E5E63"
+          "name": "Slate Blue",
+          "hex": "#5C768D"
         },
         {
-          "name": "Cedar Brown",
-          "hex": "#6C4A2E"
+          "name": "Jade Green",
+          "hex": "#36826D"
         }
       ],
       "avoid": [
         {
-          "name": "Cool Ash Taupe",
-          "hex": "#B6ADA4"
+          "name": "Hot Pink",
+          "hex": "#E85491"
         },
         {
-          "name": "Pale Mint",
-          "hex": "#C5F7E7"
+          "name": "Icy Mint",
+          "hex": "#AEE2CC"
         },
         {
-          "name": "Neon Green",
-          "hex": "#5BFF00"
+          "name": "Pale Lemon",
+          "hex": "#F0E494"
         }
       ]
     }
@@ -555,90 +555,90 @@
     "cool": {
       "best": [
         {
-          "name": "Deep Indigo Blue",
-          "hex": "#1A2E5A"
+          "name": "Deep Ruby",
+          "hex": "#8A2642"
         },
         {
-          "name": "Black Cherry",
-          "hex": "#3B0D1A"
+          "name": "Sapphire Blue",
+          "hex": "#0F4C81"
         },
         {
-          "name": "Pine Teal",
-          "hex": "#0C4C47"
+          "name": "Emerald Green",
+          "hex": "#2D735B"
         }
       ],
       "avoid": [
         {
-          "name": "Pastel Blue",
-          "hex": "#CBE4FF"
+          "name": "Warm Mustard",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Dusty Mauve",
-          "hex": "#B9A2B3"
+          "name": "Burnt Orange",
+          "hex": "#C65D47"
         },
         {
-          "name": "Light Sand Beige",
-          "hex": "#E5D8C7"
+          "name": "Earthy Olive",
+          "hex": "#5F6A42"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Burnt Umber",
-          "hex": "#6A3A1A"
+          "name": "Rich Terracotta",
+          "hex": "#C65D47"
         },
         {
-          "name": "Ember Red",
-          "hex": "#B22A1C"
+          "name": "Forest Olive",
+          "hex": "#5F6A42"
         },
         {
-          "name": "Caramel Bronze",
-          "hex": "#A46A2B"
+          "name": "Warm Bronze",
+          "hex": "#9C6839"
         }
       ],
       "avoid": [
         {
-          "name": "Lemon Yellow",
-          "hex": "#FFF44F"
+          "name": "Frosty Pink",
+          "hex": "#E8B4C8"
         },
         {
-          "name": "Peach Pastel",
-          "hex": "#F8C9B0"
+          "name": "Electric Blue",
+          "hex": "#2B5BA4"
         },
         {
           "name": "Cool Ash Gray",
-          "hex": "#C9C9C9"
+          "hex": "#8A8D91"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Deep Mauve Brown",
-          "hex": "#633A46"
+          "name": "Plum Wine",
+          "hex": "#6C3B53"
         },
         {
-          "name": "Petrol Blue",
-          "hex": "#224B5E"
+          "name": "Slate Blue",
+          "hex": "#5C768D"
         },
         {
-          "name": "Mahogany Red",
-          "hex": "#61221C"
+          "name": "Jade Green",
+          "hex": "#36826D"
         }
       ],
       "avoid": [
         {
-          "name": "Pale Lavender",
-          "hex": "#E3D6FA"
+          "name": "Hot Pink",
+          "hex": "#E85491"
         },
         {
-          "name": "Mint Chalk",
-          "hex": "#C8F7E2"
+          "name": "Icy Mint",
+          "hex": "#AEE2CC"
         },
         {
-          "name": "Neon Chartreuse",
-          "hex": "#C6FF00"
+          "name": "Pale Lemon",
+          "hex": "#F0E494"
         }
       ]
     }
@@ -647,90 +647,90 @@
     "cool": {
       "best": [
         {
-          "name": "Royal Sapphire",
-          "hex": "#16316B"
+          "name": "Royal Purple",
+          "hex": "#4B2D73"
         },
         {
-          "name": "Eggplant Purple",
-          "hex": "#3A133E"
+          "name": "Icy White",
+          "hex": "#F4F4F6"
         },
         {
-          "name": "Deep Teal Green",
-          "hex": "#084A45"
+          "name": "Vivid Crimson",
+          "hex": "#A31D38"
         }
       ],
       "avoid": [
         {
-          "name": "Baby Blue",
-          "hex": "#CDE5FF"
+          "name": "Dusty Pink",
+          "hex": "#CDA4A4"
         },
         {
-          "name": "Soft Lavender Gray",
-          "hex": "#D4CFE0"
+          "name": "Muddy Brown",
+          "hex": "#5C4A3D"
         },
         {
-          "name": "Sandy Beige",
-          "hex": "#E7D7C5"
+          "name": "Pale Mustard",
+          "hex": "#D4C27F"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Molten Copper",
-          "hex": "#AC4F1A"
+          "name": "Burnt Orange",
+          "hex": "#B25624"
         },
         {
-          "name": "Rich Maroon",
-          "hex": "#6A0F14"
+          "name": "Mustard Gold",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Golden Amber",
-          "hex": "#D3820E"
+          "name": "Rich Mahogany",
+          "hex": "#633121"
         }
       ],
       "avoid": [
         {
-          "name": "Pastel Orange",
-          "hex": "#FBC6A4"
+          "name": "Icy Silver",
+          "hex": "#B8BCC2"
         },
         {
-          "name": "Cool Mist Gray",
-          "hex": "#C6CFD3"
+          "name": "Pale Cool Gray",
+          "hex": "#C1C5C8"
         },
         {
-          "name": "Light Butter Yellow",
-          "hex": "#FFF6A1"
+          "name": "Frosty Lavender",
+          "hex": "#CBB9D8"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Raisin Plum",
-          "hex": "#4D243A"
+          "name": "Deep Teal",
+          "hex": "#1C5B64"
         },
         {
-          "name": "Slate Petrol",
-          "hex": "#295864"
+          "name": "True Red",
+          "hex": "#B0232A"
         },
         {
-          "name": "Cinnamon Brown",
-          "hex": "#7A4320"
+          "name": "Eggplant",
+          "hex": "#4B3245"
         }
       ],
       "avoid": [
         {
-          "name": "Powder Pink",
-          "hex": "#F4C7D6"
+          "name": "Muddy Mint",
+          "hex": "#B2CBAA"
         },
         {
-          "name": "Dusty Olive",
-          "hex": "#B0A87A"
+          "name": "Neon Yellow",
+          "hex": "#E6D649"
         },
         {
-          "name": "Neon Lime",
-          "hex": "#9CFF00"
+          "name": "Ashy Taupe",
+          "hex": "#9E9398"
         }
       ]
     }
@@ -739,90 +739,90 @@
     "cool": {
       "best": [
         {
-          "name": "Royal Cobalt",
-          "hex": "#12369C"
+          "name": "Royal Purple",
+          "hex": "#4B2D73"
         },
         {
-          "name": "Deep Aubergine",
-          "hex": "#2A0F2A"
+          "name": "Icy White",
+          "hex": "#F4F4F6"
         },
         {
-          "name": "Emerald Teal",
-          "hex": "#005A52"
+          "name": "Vivid Crimson",
+          "hex": "#A31D38"
         }
       ],
       "avoid": [
         {
-          "name": "Pastel Sky Blue",
-          "hex": "#CDEAFF"
+          "name": "Dusty Pink",
+          "hex": "#CDA4A4"
         },
         {
-          "name": "Muted Purple Gray",
-          "hex": "#BBAEC4"
+          "name": "Muddy Brown",
+          "hex": "#5C4A3D"
         },
         {
-          "name": "Warm Beige",
-          "hex": "#E2CFB6"
+          "name": "Pale Mustard",
+          "hex": "#D4C27F"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Metallic Bronze",
-          "hex": "#8C4B1F"
+          "name": "Burnt Orange",
+          "hex": "#B25624"
         },
         {
-          "name": "Blood Red",
-          "hex": "#8A0C14"
+          "name": "Mustard Gold",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Golden Curry",
-          "hex": "#B97C0C"
+          "name": "Rich Mahogany",
+          "hex": "#633121"
         }
       ],
       "avoid": [
         {
-          "name": "Peach Blush",
-          "hex": "#FBC7A6"
+          "name": "Icy Silver",
+          "hex": "#B8BCC2"
         },
         {
-          "name": "Powder Yellow",
-          "hex": "#FFF6A3"
+          "name": "Pale Cool Gray",
+          "hex": "#C1C5C8"
         },
         {
-          "name": "Silver Gray",
-          "hex": "#C9D0D4"
+          "name": "Frosty Lavender",
+          "hex": "#CBB9D8"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Deep Clove Brown",
-          "hex": "#4A2716"
+          "name": "Deep Teal",
+          "hex": "#1C5B64"
         },
         {
-          "name": "Petrol Slate",
-          "hex": "#274C50"
+          "name": "True Red",
+          "hex": "#B0232A"
         },
         {
-          "name": "Mulberry Wine",
-          "hex": "#5A2235"
+          "name": "Eggplant",
+          "hex": "#4B3245"
         }
       ],
       "avoid": [
         {
-          "name": "Dusty Sage",
-          "hex": "#B1B89A"
+          "name": "Muddy Mint",
+          "hex": "#B2CBAA"
         },
         {
-          "name": "Baby Lavender",
-          "hex": "#E5D5FF"
+          "name": "Neon Yellow",
+          "hex": "#E6D649"
         },
         {
-          "name": "Neon Lime Green",
-          "hex": "#8FFF00"
+          "name": "Ashy Taupe",
+          "hex": "#9E9398"
         }
       ]
     }
@@ -831,90 +831,90 @@
     "cool": {
       "best": [
         {
-          "name": "Royal Sapphire Blue",
-          "hex": "#0B2F91"
+          "name": "Royal Purple",
+          "hex": "#4B2D73"
         },
         {
-          "name": "Blackcurrant Purple",
-          "hex": "#2A0E2A"
+          "name": "Icy White",
+          "hex": "#F4F4F6"
         },
         {
-          "name": "Deep Lagoon Teal",
-          "hex": "#004743"
+          "name": "Vivid Crimson",
+          "hex": "#A31D38"
         }
       ],
       "avoid": [
         {
-          "name": "Baby Blue",
-          "hex": "#CDEAFF"
+          "name": "Dusty Pink",
+          "hex": "#CDA4A4"
         },
         {
-          "name": "Lavender Gray",
-          "hex": "#C9C4D2"
+          "name": "Muddy Brown",
+          "hex": "#5C4A3D"
         },
         {
-          "name": "Ash Beige",
-          "hex": "#E2D3C3"
+          "name": "Pale Mustard",
+          "hex": "#D4C27F"
         }
       ]
     },
     "warm": {
       "best": [
         {
-          "name": "Molten Gold",
-          "hex": "#C27A14"
+          "name": "Burnt Orange",
+          "hex": "#B25624"
         },
         {
-          "name": "Oxblood Red",
-          "hex": "#690E14"
+          "name": "Mustard Gold",
+          "hex": "#D9A05B"
         },
         {
-          "name": "Rich Henna Brown",
-          "hex": "#5A2B1B"
+          "name": "Rich Mahogany",
+          "hex": "#633121"
         }
       ],
       "avoid": [
         {
-          "name": "Peach Pastel",
-          "hex": "#F7C5A5"
+          "name": "Icy Silver",
+          "hex": "#B8BCC2"
         },
         {
-          "name": "Butter Yellow",
-          "hex": "#FFF8A6"
+          "name": "Pale Cool Gray",
+          "hex": "#C1C5C8"
         },
         {
-          "name": "Cool Silver Gray",
-          "hex": "#C5CCD0"
+          "name": "Frosty Lavender",
+          "hex": "#CBB9D8"
         }
       ]
     },
     "neutral": {
       "best": [
         {
-          "name": "Blackberry Wine",
-          "hex": "#4B1D3A"
+          "name": "Deep Teal",
+          "hex": "#1C5B64"
         },
         {
-          "name": "Midnight Petrol",
-          "hex": "#1C474E"
+          "name": "True Red",
+          "hex": "#B0232A"
         },
         {
-          "name": "Espresso Umber",
-          "hex": "#3A1F13"
+          "name": "Eggplant",
+          "hex": "#4B3245"
         }
       ],
       "avoid": [
         {
-          "name": "Dusty Sage",
-          "hex": "#B4B897"
+          "name": "Muddy Mint",
+          "hex": "#B2CBAA"
         },
         {
-          "name": "Powder Pink",
-          "hex": "#F1BFD1"
+          "name": "Neon Yellow",
+          "hex": "#E6D649"
         },
         {
-          "name": "Neon Chartreuse",
-          "hex": "#A6FF00"
+          "name": "Ashy Taupe",
+          "hex": "#9E9398"
         }
       ]
     }

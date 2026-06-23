@@ -1,0 +1,143 @@
+import json
+
+# Professional Fashion Palette (SCA aligned, 3 Best, 3 Avoid)
+# These hex codes are nuanced, realistic fabric colors, avoiding pure digital RGBs.
+
+PALETTES = {
+    # ── LIGHT SKIN (Monk 1-3) ──
+    "light_cool": {
+        "best": [
+            {"name": "Powder Blue", "hex": "#9AB2CD"},
+            {"name": "Soft Raspberry", "hex": "#B86C85"},
+            {"name": "Cool Navy", "hex": "#2B3A4A"}
+        ],
+        "avoid": [
+            {"name": "Mustard Yellow", "hex": "#D4AF37"},
+            {"name": "Warm Orange", "hex": "#E07A5F"},
+            {"name": "Olive Green", "hex": "#6B705C"}
+        ]
+    },
+    "light_warm": {
+        "best": [
+            {"name": "Warm Peach", "hex": "#F4B084"},
+            {"name": "Soft Turquoise", "hex": "#40C0CB"},
+            {"name": "Buttercup Yellow", "hex": "#F2D388"}
+        ],
+        "avoid": [
+            {"name": "Icy Blue", "hex": "#D0E4F2"},
+            {"name": "Stark Black", "hex": "#1A1A1A"},
+            {"name": "Magenta", "hex": "#C21E56"}
+        ]
+    },
+    "light_neutral": {
+        "best": [
+            {"name": "Dusty Rose", "hex": "#C5969E"},
+            {"name": "Muted Teal", "hex": "#5A8B8C"},
+            {"name": "Soft Taupe", "hex": "#A89C94"}
+        ],
+        "avoid": [
+            {"name": "Neon Green", "hex": "#7DF9FF"},
+            {"name": "Pure Orange", "hex": "#FF7F50"},
+            {"name": "Stark White", "hex": "#F8F8FF"}
+        ]
+    },
+
+    # ── MEDIUM SKIN (Monk 4-7) ──
+    "medium_cool": {
+        "best": [
+            {"name": "Deep Ruby", "hex": "#8A2642"},
+            {"name": "Sapphire Blue", "hex": "#0F4C81"},
+            {"name": "Emerald Green", "hex": "#2D735B"}
+        ],
+        "avoid": [
+            {"name": "Warm Mustard", "hex": "#D9A05B"},
+            {"name": "Burnt Orange", "hex": "#C65D47"},
+            {"name": "Earthy Olive", "hex": "#5F6A42"}
+        ]
+    },
+    "medium_warm": {
+        "best": [
+            {"name": "Rich Terracotta", "hex": "#C65D47"},
+            {"name": "Forest Olive", "hex": "#5F6A42"},
+            {"name": "Warm Bronze", "hex": "#9C6839"}
+        ],
+        "avoid": [
+            {"name": "Frosty Pink", "hex": "#E8B4C8"},
+            {"name": "Electric Blue", "hex": "#2B5BA4"},
+            {"name": "Cool Ash Gray", "hex": "#8A8D91"}
+        ]
+    },
+    "medium_neutral": {
+        "best": [
+            {"name": "Plum Wine", "hex": "#6C3B53"},
+            {"name": "Slate Blue", "hex": "#5C768D"},
+            {"name": "Jade Green", "hex": "#36826D"}
+        ],
+        "avoid": [
+            {"name": "Hot Pink", "hex": "#E85491"},
+            {"name": "Icy Mint", "hex": "#AEE2CC"},
+            {"name": "Pale Lemon", "hex": "#F0E494"}
+        ]
+    },
+
+    # ── DARK SKIN (Monk 8-10) ──
+    "dark_cool": {
+        "best": [
+            {"name": "Royal Purple", "hex": "#4B2D73"},
+            {"name": "Icy White", "hex": "#F4F4F6"},
+            {"name": "Vivid Crimson", "hex": "#A31D38"}
+        ],
+        "avoid": [
+            {"name": "Dusty Pink", "hex": "#CDA4A4"},
+            {"name": "Muddy Brown", "hex": "#5C4A3D"},
+            {"name": "Pale Mustard", "hex": "#D4C27F"}
+        ]
+    },
+    "dark_warm": {
+        "best": [
+            {"name": "Burnt Orange", "hex": "#B25624"},
+            {"name": "Mustard Gold", "hex": "#D9A05B"},
+            {"name": "Rich Mahogany", "hex": "#633121"}
+        ],
+        "avoid": [
+            {"name": "Icy Silver", "hex": "#B8BCC2"},
+            {"name": "Pale Cool Gray", "hex": "#C1C5C8"},
+            {"name": "Frosty Lavender", "hex": "#CBB9D8"}
+        ]
+    },
+    "dark_neutral": {
+        "best": [
+            {"name": "Deep Teal", "hex": "#1C5B64"},
+            {"name": "True Red", "hex": "#B0232A"},
+            {"name": "Eggplant", "hex": "#4B3245"}
+        ],
+        "avoid": [
+            {"name": "Muddy Mint", "hex": "#B2CBAA"},
+            {"name": "Neon Yellow", "hex": "#E6D649"},
+            {"name": "Ashy Taupe", "hex": "#9E9398"}
+        ]
+    }
+}
+
+# Mapping Monk Tones to Palettes
+tone_map = {}
+
+for tone in range(1, 11):
+    category = ""
+    if tone <= 3:
+        category = "light"
+    elif tone <= 7:
+        category = "medium"
+    else:
+        category = "dark"
+    
+    tone_map[f"tone_{tone}"] = {
+        "cool": PALETTES[f"{category}_cool"],
+        "warm": PALETTES[f"{category}_warm"],
+        "neutral": PALETTES[f"{category}_neutral"],
+    }
+
+with open("monk_skin_tone_color_recommendations.json", "w", encoding="utf-8") as f:
+    json.dump(tone_map, f, indent=2)
+
+print("Successfully regenerated monk_skin_tone_color_recommendations.json with professional fashion colors.")
