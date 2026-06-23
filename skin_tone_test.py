@@ -796,8 +796,7 @@ def classify_monk_v10(image_path: str, debug: bool = False) -> dict:
         if np.count_nonzero(sclera_mask) >= 30:
             sel  = rgb_wb[sclera_mask].astype(float)
             gray = (sel[:,0].mean() + sel[:,1].mean() + sel[:,2].mean()) / 3.0
-            # Sclera target ~ RGB 210 (L* ≈ 92-95)
-            # If set too low (e.g., 185), very pale skin (Tone 1) gets capped at L*≈88 and misclassified as Tone 4.
+            # Sclera target ~ RGB 185 (L* ≈ 88)
             exposure_factor = 210.0 / max(gray, 60.0)
             # Conservative range: avoid over-lifting even fair skin
             exposure_factor = float(np.clip(exposure_factor, 0.85, 1.50))
