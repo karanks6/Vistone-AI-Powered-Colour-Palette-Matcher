@@ -21,6 +21,10 @@ def allowed(filename: str) -> bool:
 def index():
     return render_template("index.html")
 
+@app.route("/about", methods=["GET"])
+def about():
+    return render_template("about.html")
+
 
 @app.route("/analyze", methods=["POST"])
 def analyze():

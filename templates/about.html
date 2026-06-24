@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}About — Vistone{% endblock %}
+
+{% block content %}
+<section class="max-w-3xl mx-auto py-12 px-4 fade-in">
+  <div class="glass rounded-2xl p-8 shadow-sm">
+    <h1 class="editorial text-4xl mb-6 tracking-tight text-neutral-800">About Vistone</h1>
+    
+    <div class="space-y-6 text-neutral-700 leading-relaxed">
+      <p class="text-lg">
+        <strong>Vistone</strong> is an AI-powered personal color analysis tool designed to help you discover the colors that love you back.
+      </p>
+      
+      <p>
+        Finding the right colors to wear has traditionally been an expensive, manual process done by professional stylists. We've automated this process using advanced facial recognition and computer vision.
+      </p>
+
+      <h2 class="editorial text-2xl pt-4 text-neutral-800">How It Works</h2>
+      <p>
+        When you upload a selfie, Vistone uses artificial intelligence to map your facial landmarks. It carefully extracts precise pixels from your cheeks, forehead, and nose while avoiding shadows, highlights, and facial hair.
+      </p>
+      
+      <p>
+        These pure skin samples are then analyzed against the <strong>Google Monk Skin Tone Scale</strong> (a comprehensive 10-shade scale designed to represent a wider, more inclusive range of human skin tones). We map your skin to the closest Monk tone and calculate your underlying warmth or coolness to determine your undertone.
+      </p>
+
+      <h2 class="editorial text-2xl pt-4 text-neutral-800">Professional Color Harmony</h2>
+      <p>
+        Based on your unique combination of Monk tone and undertone, Vistone references a strictly curated, professional <strong>Seasonal Color Analysis (SCA)</strong> database.
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-neutral-600">
+        <li><strong>Best Colors:</strong> Specifically harmonized fabric shades that compliment your lightness and chroma, bringing out a healthy glow.</li>
+        <li><strong>Colors to Avoid:</strong> Shades that may clash with your undertone, wash you out, or create an unflattering contrast.</li>
+      </ul>
+
+      <div class="mt-10 pt-6 border-t border-white/40 flex justify-center">
+        <a href="{{ url_for('index') }}" class="inline-block bg-gradient-to-r from-[var(--brand-1)] to-[var(--brand-2)] text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          Find Your Colors Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
