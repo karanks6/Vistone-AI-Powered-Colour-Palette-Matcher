@@ -368,7 +368,5 @@ A simple mean is easily corrupted by even a small percentage of stray pixels (e.
 ---
 
 <div align="center">
-
 *Built with precision color science, computer vision, and a genuine care for inclusive design.*
-
 </div>
